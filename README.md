@@ -16,4 +16,5 @@ A library designed to use in OI for C++.
 
 - [ ] Make constants like `mod` and `grt` variable.
 - [ ] Overload more operators.
+- [ ] Replace arrays with `std::vector`.
 - [ ] Network flow support.
