@@ -5,7 +5,7 @@ This is the informations related to poly.h. You can read an better rendered vers
 ## Fixed Module Polynomial
 
 The fixed module polynomial use specified integers as its module value, default 998244353. If you would like to modify the module value to $P$, you have to:
-- $P$ has to be able to be expressed as $a*2^k+1$, where $a$ and $k$ are postive integer, and $2^k$ is greater always greater than the length of all instances.
+- $P$ has to be a prime number, and is able to be expressed as $a*2^k+1$, where $a$ and $k$ are postive integer, and $2^k$ is greater always greater than the length of all instances.
 - Let $G$ be the [primitive root](https://en.wikipedia.org/wiki/Primitive_root_modulo_n) modulo $P$, you should assign $P$ and $G$ to `fstdlib::mod` and `fstdlib::grt` respectively.
 
 The strict module restriction is caused by Fast Numerial Theory Tranform (FNTT) used to implement the calculation.
@@ -30,3 +30,16 @@ Some member functions are available. Check for them in the following form:
 |Name|Intro.|Implement|
 |:-:|:-:|:-:|
 |`poly inv(int n = this->size())`|Calculate the inverse modulo $x^n$.|Newton's Method|
+
+## Arbitrary Module Polynomial
+
+The arbitrary module polynomial is totally the same with the fixed one, except it has no module restriction, which means you can use any integer as your module value. However, arbitrary module polynomial is significant slower than the fixed module polynomial in coefficient factor. Besides, you can not operate nonlinear calculation except convolution if the module value is not a prime number.
+
+To create a fixed module polynomial instance, just call for `fstdlib::m_poly`. You can use the following method to initialize a `fstdlib::m_poly`:
+
+|Name|Intro.|
+|:-:|:-:|
+|`m_poly(std::vector<int>, int mod = 1e9 + 7)`|Initialize a polynomial with an vector. The module value of the polynomial is set to mod initially.|
+|`m_poly(std::size_t n = 0, int mod = 1e9 + 7)`|Construct a polynomial of length n, with all elements set to zero. The module value of the polynomial is set to mod initially.|
+
+You can always change the module value by access the member named `mod`. Note that the polynomial's coefficient will not change with the change of `mod`.
