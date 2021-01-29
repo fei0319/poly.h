@@ -1,5 +1,5 @@
 # fstdlib
-A library designed to use in OI for C++.
+A C++ library designed for OI.
 
 ## Features
 
