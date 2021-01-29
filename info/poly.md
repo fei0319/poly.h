@@ -5,7 +5,7 @@ This is the informations related to poly.h. You can read an better rendered vers
 ## Fixed Module Polynomial
 
 The fixed module polynomial use specified integers as its module value, default 998244353. If you would like to modify the module value to $P$, you have to:
-- $P$ has to be able to expressed as $a*2^k+1$, where $a$ and $k$ are postive integer, and $2^k$ is greater always greater than the length of all instances.
+- $P$ has to be able to be expressed as $a*2^k+1$, where $a$ and $k$ are postive integer, and $2^k$ is greater always greater than the length of all instances.
 - Let $G$ be the [primitive root](https://en.wikipedia.org/wiki/Primitive_root_modulo_n) modulo $P$, you should assign $P$ and $G$ to `fstdlib::mod` and `fstdlib::grt` respectively.
 
 The strict module restriction is caused by Fast Numerial Theory Tranform (FNTT) used to implement the class.
