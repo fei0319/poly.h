@@ -8,7 +8,7 @@ The fixed module polynomial use specified integers as its module value, default 
 - $P$ has to be able to be expressed as $a*2^k+1$, where $a$ and $k$ are postive integer, and $2^k$ is greater always greater than the length of all instances.
 - Let $G$ be the [primitive root](https://en.wikipedia.org/wiki/Primitive_root_modulo_n) modulo $P$, you should assign $P$ and $G$ to `fstdlib::mod` and `fstdlib::grt` respectively.
 
-The strict module restriction is caused by Fast Numerial Theory Tranform (FNTT) used to implement the class.
+The strict module restriction is caused by Fast Numerial Theory Tranform (FNTT) used to implement the calculation.
 
 To create a fixed module polynomial instance, just call for `fstdlib::poly`. You can use the following method to initialize a `fstdlib::poly`:
 
