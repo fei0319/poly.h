@@ -3,7 +3,7 @@ A library designed to use in OI for C++.
 
 ## Features
 
-- Polynomial Class that supports most operations like convolution, square root, logarithm and exponential function.
+- Polynomial Class that supports most operations like convolution, square root, logarithm and exponential function under modulo meaning.
 - Arbitrary Module Polynomial Class that supports most operations as the Polynomial Class.
 
 ## Update Log
