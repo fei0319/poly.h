@@ -1,6 +1,12 @@
 #ifndef _FEISTDLIB_POLY_
 #define _FEISTDLIB_POLY_
 
+/*
+ * This file is part of the fstdlib project.
+ * Version Build v0.0.2
+ * You can check for details at https://github.com/FNatsuka/fstdlib
+ */
+
 #include <cstdio>
 #include <vector>
 #include <algorithm>
@@ -9,7 +15,7 @@
 namespace fstdlib{
 
 	typedef long long ll;
-	const int maxn = 1 << 20, mod = 998244353, grt = 3;
+	int mod = 998244353, grt = 3;
 	
 	class poly{
 	private:
@@ -61,9 +67,10 @@ namespace fstdlib{
 		return res;
 	}
 	
-	int rev[maxn];
+	std::vector<int> rev;
 	void dft_for_module(std::vector<int> &f, int n, int b){
-		static int w[maxn];
+		static std::vector<int> w;
+		w.resize(n);
 		for(int i = 0; i < n; ++i) if(i < rev[i]) std::swap(f[i], f[rev[i]]);
 		for(int i = 2; i <= n; i <<= 1){
 			w[0] = 1, w[1] = qpow(grt, (mod - 1) / i); if(b == -1) w[1] = qpow(w[1], mod - 2);
@@ -79,6 +86,7 @@ namespace fstdlib{
 	poly poly::operator*(const poly &h)const{
 		int N = 1; while(N < (int)(size() + h.size() - 1)) N <<= 1;
 		std::vector<int> f(this->data), g(h.data); f.resize(N), g.resize(N);
+		rev.resize(N);
 		for(int i = 0; i < N; ++i) rev[i] = (rev[i >> 1] >> 1) | (i & 1 ? N >> 1 : 0);
 		dft_for_module(f, N, 1), dft_for_module(g, N, 1);
 		for(int i = 0; i < N; ++i) f[i] = (ll)f[i] * g[i] % mod;
@@ -168,6 +176,7 @@ namespace fstdlib{
 		d.resize(N), f[0] = qpow(d[0], mod - 2);
 		for(int w = 2; w < N; w <<= 1){
 			for(int i = 0; i < w; ++i) g[i] = d[i];
+			rev.resize(w << 1);
 			for(int i = 0; i < w * 2; ++i) rev[i] = (rev[i >> 1] >> 1) | (i & 1 ? w : 0);
 			dft_for_module(f, w << 1, 1), dft_for_module(g, w << 1, 1);
 			for(int i = 0; i < w * 2; ++i) f[i] = (ll)f[i] * (2 + mod - (ll)f[i] * g[i] % mod) % mod;
@@ -288,7 +297,8 @@ namespace fstdlib{
 	const long double PI = std::acos((long double)(-1));
 
 	void dft_for_complex(std::vector<comp> &f, int n, int b){
-		static comp w[maxn];
+		static std::vector<comp> w;
+		w.resize(n);
 		for(int i = 0; i < n; ++i) if(i < rev[i]) std::swap(f[i], f[rev[i]]);
 		for(int i = 2; i <= n; i <<= 1){
 			w[0] = comp(1, 0), w[1] = comp(cos(2 * PI / i), b * sin(2 * PI / i));
@@ -349,6 +359,7 @@ namespace fstdlib{
 		const int D = std::sqrt(mod);
 		for(int i = 0; i < (int)size(); ++i) f[i].x = data[i] / D, f[i].y = data[i] % D;
 		for(int i = 0; i < (int)h.size(); ++i) g[i].x = h[i] / D, g[i].y = h[i] % D;
+		rev.resize(N);
 		for(int i = 0; i < N; ++i) rev[i] = (rev[i >> 1] >> 1) | (i & 1 ? N >> 1 : 0);
 		dft_for_complex(f, N, 1), dft_for_complex(g, N, 1);
 		for(int i = 0; i < N; ++i){
