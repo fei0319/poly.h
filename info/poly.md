@@ -42,4 +42,4 @@ To create a fixed module polynomial instance, just call for `fstdlib::m_poly`. Y
 |`m_poly(std::vector<int>, int mod = 1e9 + 7)`|Initialize a polynomial with an vector. The module value of the polynomial is set to mod initially.|
 |`m_poly(std::size_t n = 0, int mod = 1e9 + 7)`|Construct a polynomial of length n, with all elements set to zero. The module value of the polynomial is set to mod initially.|
 
-You can always change the module value by access the member named `mod`. Note that the polynomial's coefficient will not change with the change of `mod`.
+You can always change the module value by accessing the member named `mod`. Note that the polynomial's coefficient will not change with the change of `mod`.
