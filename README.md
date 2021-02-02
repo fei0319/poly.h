@@ -12,9 +12,13 @@ A C++ library designed for OI.
 - poly.h is published.
 - Many features are not well-developed yet.
 
+### Build v0.0.2
+- Arrays are replaced with `std::vector`.
+- `mod` and `grt` are variable now. You can always modify them by accessing `fstdlib::mod` and `fstdlib::grt`.
+
 ## Schedule
 
-- [ ] Make constants like `mod` and `grt` variable.
+- [x] Make constants like `mod` and `grt` variable.
 - [ ] Overload more operators.
-- [ ] Replace arrays with `std::vector`.
+- [x] Replace arrays with `std::vector`.
 - [ ] Network flow support.
