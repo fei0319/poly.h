@@ -35,6 +35,7 @@ Some functions available are listed in the following form:
 |`poly poly::inv(int n)`|Calculate the inverse modulo $x^n$.|Newton's Method|
 |`poly log(const poly &)`|Calculate a polynomial $H$, such that $H \equiv \ln F \pmod{x^n}$.|Derivative and Integration|
 |`poly exp(const poly &)`|Calculate a polynomial $H$, such that $H \equiv \exp F \pmod{x^n}$.|Newton's Method|
+|`poly sqrt(const poly &)`|Calculate a polynomial $H$, such that $H^2 \equiv F \pmod{x^n}$.|Newton's Method|
 
 ## Arbitrary Module Polynomial
 
