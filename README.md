@@ -1,17 +1,24 @@
 # fstdlib
-为 OI 设计的 C++ 模板库。
+A C++ library designed for OI.
 
-## 目前功能
+## Features
 
-- 在特定剩余系下运算的多项式类。
-- 在任意剩余系下运算的多项式类。
+- Polynomial Class that supports most operations like convolution, square root, logarithm and exponential function.
+- Arbitrary Module Polynomial Class that supports most operations as the Polynomial Class.
 
-## 版本日志
+## Update Log
 
 ### Build v0.0.1
-- 发布了 poly.h。
-- 许多功能尚不完善。
+- poly.h is published.
+- Many features are not well-developed yet.
 
 ### Build v0.0.2
-- 一些应当允许用户修改的常量被改为变量。
-- 用 `std::vector` 替换了数组。
+- Arrays are replaced with `std::vector`.
+- `mod` and `grt` are variable now. You can always modify them by accessing `fstdlib::mod` and `fstdlib::grt`.
+
+## Schedule
+
+- [x] Make constants like `mod` and `grt` variable.
+- [ ] Overload more operators.
+- [x] Replace arrays with `std::vector`.
+- [ ] Network flow support.
