@@ -3,7 +3,7 @@
 
 /*
  * This file is part of the fstdlib project.
- * Version Build v0.0.2
+ * Version Build v0.1.1
  * You can check for details at https://github.com/FNatsuka/fstdlib
  */
 
