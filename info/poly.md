@@ -4,9 +4,9 @@ This is the informations related to poly.h. You can read an better rendered vers
 
 ## Fixed Module Polynomial
 
-The fixed module polynomial use specified integers as its module value, default 998244353. If you would like to modify the module value to $P$, you have to:
+The fixed module polynomial use specified integers as its module value, default 998244353. If you would like to modify the module value to $P$, you have to ensure:
 - $P$ has to be a prime number, and is able to be expressed as $a*2^k+1$, where $a$ and $k$ are postive integer, and $2^k$ is greater always greater than the length of all instances.
-- Let $G$ be the [primitive root](https://en.wikipedia.org/wiki/Primitive_root_modulo_n) modulo $P$, you should assign $P$ and $G$ to `fstdlib::mod` and `fstdlib::grt` respectively.
+- Let $G$ be a [primitive root](https://en.wikipedia.org/wiki/Primitive_root_modulo_n) modulo $P$, you should assign $P$ and $G$ to `fstdlib::mod` and `fstdlib::grt` respectively.
 
 The strict module restriction is caused by Fast Numerial Theory Tranform (FNTT) used to implement the calculation.
 
@@ -24,12 +24,17 @@ Several operators are overloaded, some of them are listed in the following form:
 |Operator|Intro.|Implement|
 |:-:|:-:|:-:|
 |`*` and `*=`|Calculate the convolution of two polynomials.|FNTT|
+|`+` and `+=`|Calculate the sum of two polynomials.||
+|`>>` and `>>=`|Right shift the polynomial.||
+|`<<` and `<<=`|Left shift the polynomial.||
 
-Some member functions are available. Check for them in the following form:
+Some functions available are listed in the following form:
 
 |Name|Intro.|Implement|
 |:-:|:-:|:-:|
-|`poly inv(int n = this->size())`|Calculate the inverse modulo $x^n$.|Newton's Method|
+|`poly poly::inv(int n)`|Calculate the inverse modulo $x^n$.|Newton's Method|
+|`poly log(const poly &)`|Calculate a polynomial $H$, such that $H \equiv \ln F \pmod{x^n}$.|Derivative and Integration|
+|`poly exp(const poly &)`|Calculate a polynomial $H$, such that $H \equiv \exp F \pmod{x^n}$.|Newton's Method|
 
 ## Arbitrary Module Polynomial
 
