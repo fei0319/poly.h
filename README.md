@@ -8,11 +8,11 @@ A C++ library designed for OI.
 
 ## Update Log
 
-### Build v0.0.1
+### Build v0.1.0
 - poly.h is published.
 - Many features are not well-developed yet.
 
-### Build v0.0.2
+### Build v0.1.1
 - Arrays are replaced with `std::vector`.
 - `mod` and `grt` are variable now. You can always modify them by accessing `fstdlib::mod` and `fstdlib::grt`.
 
