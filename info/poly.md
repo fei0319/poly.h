@@ -1,6 +1,6 @@
 # Poly.h Info.
 
-This is the informations related to poly.h. You can read an better rendered version [here]().
+This is the informations related to poly.h. You can read a better rendered version [here]().
 
 ## Fixed Module Polynomial
 
