@@ -16,6 +16,11 @@ A C++ library designed for OI.
 - Arrays are replaced with `std::vector`.
 - `mod` and `grt` are variable now. You can always modify them by accessing `fstdlib::mod` and `fstdlib::grt`.
 
+### Build v0.0.3
+- Codes are rewritten. They are more efficient now.
+- Overloads are completed.
+- netflow.h is published.
+
 ## Schedule
 
 - [x] Make constants like `mod` and `grt` variable.
