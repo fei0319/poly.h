@@ -37,7 +37,7 @@ Some functions available are listed in the following form:
 |`poly exp(const poly &)`|Calculate a polynomial $H$, such that $H \equiv \exp F \pmod{x^n}$.|Newton's Method|
 |`poly sqrt(const poly &)`|Calculate a polynomial $H$, such that $H^2 \equiv F \pmod{x^n}$.|Newton's Method|
 
-## Arbitrary modulo Polynomial
+## Arbitrary Modulo Polynomial
 
 The arbitrary modulo polynomial is totally the same with the fixed one, except it has no modulo restriction, which means you can use any integer as your modulo. However, arbitrary modulo polynomial is significant slower than the fixed modulo polynomial in coefficient factor. Besides, you can not operate nonlinear calculation except convolution if the modulo is not a prime number.
 
