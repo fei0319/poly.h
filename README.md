@@ -3,7 +3,7 @@ English | [简体中文]()
 # fstdlib
 A C++ library designed for OI.
 
-![](https://img.shields.io/badge/license-GPL-blue?style=flat-square) ![](https://img.shields.io/badge/C++-100.0%25-green?style=flat-square) ![](https://img.shields.io/badge/requirements-C++98%20or%20newer-brightgreen)
+![](https://img.shields.io/badge/license-GPL-blue?style=flat-square) ![](https://img.shields.io/badge/C++-100.0%25-green?style=flat-square) ![](https://img.shields.io/badge/requirements-C++98%20or%20newer-brightgreen?style=flat-square)
 
 ## Features
 
