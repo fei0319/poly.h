@@ -24,6 +24,6 @@ You are highly recommended to always use the latest version.
 
 Any type of contribution is welcome, here are some examples of how you may contribute to this project:
 
-- Use fstdlib in you solution.
+- Use fstdlib in your solution.
 - Submit issues to report bugs or ask questions.
 - Propose pull requests to improve our code.
