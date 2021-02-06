@@ -3,11 +3,13 @@ English | [简体中文]()
 # fstdlib
 A C++ library designed for OI.
 
+![](https://img.shields.io/badge/license-GPL-blue?style=flat-square) ![](https://img.shields.io/badge/C++-100.0%25-green?style=flat-square) ![](https://img.shields.io/badge/requirements-C++98%20or%20newer-brightgreen)
+
 ## Features
 
-- **Polynomial Class** that supports most operations like convolution, square root, logarithm and exponential function.
-- **Arbitrary Modulo Polynomial Class** that supports most operations as the Polynomial Class.
-- **Network Flow** algorithms.
+- 📈 **Polynomial Class**: Supports most operations like convolution, square root, logarithm and exponential function.
+- 📉 **Arbitrary Modulo Polynomial Class**: Supports most operations like convolution, square root, logarithm and exponential function.
+- 🌊 **Network Flow**
 
 ## Files
 
