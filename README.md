@@ -9,7 +9,7 @@ A C++ library designed for OI.
 
 - 📈 **Polynomial Class**: Supports most operations like convolution, square root, logarithm and exponential function.
 - 📉 **Arbitrary Modulo Polynomial Class**: Supports most operations like convolution, square root, logarithm and exponential function.
-- 🌊 **Network Flow**
+- 🌊 **Network Flow**: Maximum flow and minimum fee.
 
 ## Files
 
