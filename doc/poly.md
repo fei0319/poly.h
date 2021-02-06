@@ -1,3 +1,5 @@
+> This document is out of date. Many informations may not be exact.
+
 # Poly.h Info.
 
 This is the informations related to poly.h. You can read a better rendered version [here]().
