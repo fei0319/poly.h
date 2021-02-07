@@ -15,7 +15,7 @@ A C++ library designed for OI.
 
 |Item|Introduction|Source|Document|Version|
 |:-:|:-:|:-:|:-:|:-:|
-|Polynomial|Support for polynomial calculation. Arbitrary modulo supported.|[poly.h](https://raw.githubusercontent.com/FNatsuka/fstdlib/poly/source/poly.h)|[poly](https://github.com/FNatsuka/fstdlib/blob/master/doc/poly.md)|v0.0.3 Build|
+|Polynomial|Support for polynomial calculation. Arbitrary modulo supported.|[poly.h](https://raw.githubusercontent.com/FNatsuka/fstdlib/master/source/poly.h)|[poly](https://github.com/FNatsuka/fstdlib/blob/master/doc/poly.md)|v0.0.3 Build|
 |Network Flow|Support for network flow. Maximum flow and minimum fee included.|[netwflow.h]()|[netwflow]()|v0.0.1 Build|
 
 You are highly recommended to always use the latest version.
