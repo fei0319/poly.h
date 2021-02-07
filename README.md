@@ -1,4 +1,4 @@
-English | [简体中文]()
+English | [简体中文](https://github.com/FNatsuka/fstdlib/blob/master/README.zh-CN.md)
 
 # fstdlib
 A C++ library designed for OI.
