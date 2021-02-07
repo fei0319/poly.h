@@ -1,4 +1,4 @@
-> This document is out of date. Many informations may not be exact.
+> This document is out of date. Many informations may not be exact. [Check the latest information in the Simplefied Chinese version](https://github.com/FNatsuka/fstdlib/blob/master/doc/poly.zh-CN.md).
 
 # Poly.h Info.
 
