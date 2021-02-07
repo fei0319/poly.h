@@ -1,29 +1,31 @@
-English | [简体中文](https://github.com/FNatsuka/fstdlib/blob/master/README.zh-CN.md)
+[English](https://github.com/FNatsuka/fstdlib/blob/master/README.en.md) | 简体中文
 
 # fstdlib
-A C++ library designed for OI.
+为 OI 设计的 C++ 模板库。
 
 ![](https://img.shields.io/badge/license-GPL-blue?style=flat-square) ![](https://img.shields.io/badge/C++-100.0%25-green?style=flat-square) ![](https://img.shields.io/badge/requirements-C++98%20or%20newer-brightgreen?style=flat-square)
 
-## Features
+## 特性
 
-- 📈 **Polynomial Class**: Supports most operations like convolution, square root, logarithm and exponential function.
-- 📉 **Arbitrary Modulo Polynomial Class**: Supports most operations like convolution, square root, logarithm and exponential function.
-- 🌊 **Network Flow**: Maximum flow and minimum fee.
+- 📈 **多项式类**: 支持包括卷积，开方，指对函数在内的大量多项式运算。
+- 📉 **任意模数多项式类**: 支持包括卷积，开方，指对函数在内的大量多项式运算。
+- 🌊 **网络流**: 求最大流和最小费用。
 
-## Files
+fstdlib 经过完善的封装，确保您可以轻松地使用，将注意力集中到题目本身。不仅如此，fstdlib 还拥有优秀的运行效率，确保您不会错失应得的分数。
 
-|Item|Introduction|Source|Document|Version|
+## 内容
+
+|项目|简介|代码|文档|版本|
 |:-:|:-:|:-:|:-:|:-:|
-|Polynomial|Support for polynomial calculation. Arbitrary modulo supported.|[poly.h](https://raw.githubusercontent.com/FNatsuka/fstdlib/master/source/poly.h)|[poly](https://github.com/FNatsuka/fstdlib/blob/master/doc/poly.md)|v0.0.3 Build|
-|Network Flow|Support for network flow. Maximum flow and minimum fee included.|[netwflow.h]()|[netwflow]()|v0.0.1 Build|
+|多项式|包含多项式类和任意模数多项式类|[poly.h](https://raw.githubusercontent.com/FNatsuka/fstdlib/poly/source/poly.h)|[poly](https://github.com/FNatsuka/fstdlib/blob/master/doc/poly.zh-CN.md)|v0.0.3 Build|
+|网络流|包含网络流中的求最大流、最大流最小费用算法。|[netwflow.h]()|[netwflow]()|v0.0.1 Build|
 
-You are highly recommended to always use the latest version.
+我们强烈推荐您使用最新版本的 fstdlib。
 
-## Contributing 
+## 贡献
 
-Any type of contribution is welcome, here are some examples of how you may contribute to this project:
+我们非常欢迎您为 fstdlib 做出贡献！您可以以如下的方式贡献：
 
-- Use fstdlib in your solution.
-- Submit issues to report bugs or ask questions.
-- Propose pull requests to improve our code.
+- 在您的代码中使用 fstdlib。
+- 提交 issues 来报告 bugs 或询问问题。
+- 提交 PR 来帮助我们优化 fstdlib。
