@@ -1,24 +1,29 @@
+English | [简体中文](https://github.com/FNatsuka/fstdlib/blob/master/README.zh-CN.md)
+
 # fstdlib
 A C++ library designed for OI.
 
+![](https://img.shields.io/badge/license-GPL-blue?style=flat-square) ![](https://img.shields.io/badge/C++-100.0%25-green?style=flat-square) ![](https://img.shields.io/badge/requirements-C++98%20or%20newer-brightgreen?style=flat-square)
+
 ## Features
 
-- Polynomial Class that supports most operations like convolution, square root, logarithm and exponential function.
-- Arbitrary Module Polynomial Class that supports most operations as the Polynomial Class.
+- 📈 **Polynomial Class**: Supports most operations like convolution, square root, logarithm and exponential function.
+- 📉 **Arbitrary Modulo Polynomial Class**: Supports most operations like convolution, square root, logarithm and exponential function.
+- 🌊 **Network Flow**: Maximum flow and minimum fee.
 
-## Update Log
+## Files
 
-### Build v0.1.0
-- poly.h is published.
-- Many features are not well-developed yet.
+|Item|Introduction|Source|Document|Version|
+|:-:|:-:|:-:|:-:|:-:|
+|Polynomial|Support for polynomial calculation. Arbitrary modulo supported.|[poly.h](https://raw.githubusercontent.com/FNatsuka/fstdlib/poly/source/poly.h)|[poly](https://github.com/FNatsuka/fstdlib/blob/master/doc/poly.md)|v0.0.3 Build|
+|Network Flow|Support for network flow. Maximum flow and minimum fee included.|[netwflow.h]()|[netwflow]()|v0.0.1 Build|
 
-### Build v0.1.1
-- Arrays are replaced with `std::vector`.
-- `mod` and `grt` are variable now. You can always modify them by accessing `fstdlib::mod` and `fstdlib::grt`.
+You are highly recommended to always use the latest version.
 
-## Schedule
+## Contributing 
 
-- [x] Make constants like `mod` and `grt` variable.
-- [ ] Overload more operators.
-- [x] Replace arrays with `std::vector`.
-- [ ] Network flow support.
+Any type of contribution is welcome, here are some examples of how you may contribute to this project:
+
+- Use fstdlib in your solution.
+- Submit issues to report bugs or ask questions.
+- Propose pull requests to improve our code.
