@@ -17,7 +17,7 @@ fstdlib 经过完善的封装，确保您可以轻松地使用，将注意力集
 
 |项目|简介|代码|文档|版本|
 |:-:|:-:|:-:|:-:|:-:|
-|多项式|包含多项式类和任意模数多项式类|[poly.h](https://raw.githubusercontent.com/FNatsuka/fstdlib/poly/source/poly.h)|[poly](https://github.com/FNatsuka/fstdlib/blob/master/doc/poly.md)|v0.0.3 Build|
+|多项式|包含多项式类和任意模数多项式类|[poly.h](https://raw.githubusercontent.com/FNatsuka/fstdlib/poly/source/poly.h)|[poly](https://github.com/FNatsuka/fstdlib/blob/master/doc/poly.zh-CN.md)|v0.0.3 Build|
 |网络流|包含网络流中的求最大流、最大流最小费用算法。|[netwflow.h]()|[netwflow]()|v0.0.1 Build|
 
 我们强烈推荐您使用最新版本的 fstdlib。
