@@ -79,3 +79,4 @@ poly.h 中定义了两个类，名为 `poly` 和 `m_poly`。它们都在命名�
 - 在卷积的两个多项式中的其中一个次数较小时，使用 ![](http://latex.codecogs.com/gif.latex?O(nm)) 的方法直接计算。
 - 支持求二次剩余。
 - 新增 `pow` 函数，计算多项式的指定次幂。
+- 支持分治 NTT 实现的小常数 ![](http://latex.codecogs.com/gif.latex?O(n\log%20n)) 指数函数求法。
