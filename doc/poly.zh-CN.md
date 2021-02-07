@@ -1,6 +1,6 @@
 # poly.h 文档
 
-本文档是 [poly.h](https://raw.githubusercontent.com/FNatsuka/fstdlib/poly/source/poly.h) 的支持文档。您可以在此了解 poly.h 的使用方法。
+本文档是 [poly.h](https://github.com/FNatsuka/fstdlib/blob/master/source/poly.h) 的支持文档。您可以在此了解 poly.h 的使用方法。
 
 ## 基本介绍
 
