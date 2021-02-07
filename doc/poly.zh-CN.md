@@ -25,19 +25,58 @@ poly.h 中定义了两个类，名为 `poly` 和 `m_poly`。它们都在命名�
 
 |方法|简介|
 |:-:|:-:|
-|`poly(std::size_t n)`|构造一个长度为 ![](http://latex.codecogs.com/gif.latex?n) 的多项式，所有元素初始为 ![](http://latex.codecogs.com/gif.latex?0)。|
+|`poly(std::size_t n)`|构造一个长度为 ![](http://latex.codecogs.com/gif.latex?n) 的多项式，所有元素初始为 ![](http://latex.codecogs.com/gif.latex?0) 。|
 |`poly(std::vector<int> a)`|用 ![](http://latex.codecogs.com/gif.latex?a) 来初始化一个多项式。|
-|`m_poly(std::size_t n, int p)`|构造一个长度为 ![](http://latex.codecogs.com/gif.latex?n) 的任意模数多项式，所有元素初始为 ![](http://latex.codecogs.com/gif.latex?0)。多项式的模数被初始化为 ![](http://latex.codecogs.com/gif.latex?p)。|
-|`m_poly(std::vector<int> a, int p)`|用 ![](http://latex.codecogs.com/gif.latex?a) 来初始化一个任意模数多项式。多项式的模数被初始化为 ![](http://latex.codecogs.com/gif.latex?p)。|
-
-**下面部分尚未完工。暂且使用较为口语化的语言大致描述。**
+|`m_poly(std::size_t n, int p)`|构造一个长度为 ![](http://latex.codecogs.com/gif.latex?n) 的任意模数多项式，所有元素初始为 ![](http://latex.codecogs.com/gif.latex?0)。多项式的模数被初始化为 ![](http://latex.codecogs.com/gif.latex?p) 。|
+|`m_poly(std::vector<int> a, int p)`|用 ![](http://latex.codecogs.com/gif.latex?a) 来初始化一个任意模数多项式。多项式的模数被初始化为 ![](http://latex.codecogs.com/gif.latex?p) 。|
 
 ## 重载运算符和成员函数
 
-支持 `*`，`*=` 等一系列运算，能用到的都有。只有以多项式为右值的除法没有定义，因为我认为这种运算不太严谨。
+|方法|简介|时间复杂度|
+|:-:|:-:|:-:|
+|`poly operator*(const poly &, const poly &)`|计算两个多项式的卷积。|![](http://latex.codecogs.com/gif.latex?O(n\log%20n)) |
+|`poly &operator*=(poly &, const poly &)`|计算两个多项式的卷积。|![](http://latex.codecogs.com/gif.latex?O(n\log%20n)) |
+|`poly operator*(const poly &, const int &`|计算多项式和单项式的卷积。|![](http://latex.codecogs.com/gif.latex?O(n)) |
+|`poly &operator*=(poly &, const int &)`|计算多项式和单项式的卷积。|![](http://latex.codecogs.com/gif.latex?O(n)) |
+|`poly operator*(const int &, const poly &)`|计算多项式和单项式的卷积。|![](http://latex.codecogs.com/gif.latex?O(n)) |
+|`poly operator>>(const poly &, const int &)`|将多项式右移指定次。|![](http://latex.codecogs.com/gif.latex?O(n)) |
+|`poly &operator>>=(poly &, const int &)`|将多项式右移指定次。|![](http://latex.codecogs.com/gif.latex?O(n)) |
+|`poly operator<<(const poly &, const int &)`|将多项式左移指定次。|![](http://latex.codecogs.com/gif.latex?O(n)) |
+|`poly &operator<<=(poly &, const int &)`|将多项式左移指定次。|![](http://latex.codecogs.com/gif.latex?O(n)) |
+|`poly operator+(const poly &, const poly &)`|计算两个多项式的和。|![](http://latex.codecogs.com/gif.latex?O(n)) |
+|`poly &operator+=(poly &, const poly &)`|计算两个多项式的和。|![](http://latex.codecogs.com/gif.latex?O(n)) |
+|`poly operator+(const poly &, const int &`|计算多项式和单项式的和。|![](http://latex.codecogs.com/gif.latex?O(n)) |
+|`poly &operator+=(poly &, const int &)`|计算多项式和单项式的和。|![](http://latex.codecogs.com/gif.latex?O(1)) |
+|`poly operator+(const int &, const poly &)`|计算多项式和单项式的和。|![](http://latex.codecogs.com/gif.latex?O(n)) |
+|`poly operator-(const poly &, const poly &)`|计算两个多项式的差。|![](http://latex.codecogs.com/gif.latex?O(n)) |
+|`poly &operator-=(poly &, const poly &)`|计算两个多项式的差。|![](http://latex.codecogs.com/gif.latex?O(n)) |
+|`poly operator-(const poly &, const int &`|计算多项式和单项式的差。|![](http://latex.codecogs.com/gif.latex?O(n)) |
+|`poly &operator-=(poly &, const int &)`|计算多项式和单项式的差。|![](http://latex.codecogs.com/gif.latex?O(1)) |
+|`poly operator-(const int &, const poly &)`|计算单项式和多项式的差。|![](http://latex.codecogs.com/gif.latex?O(n)) |
+|`poly operator/(const poly &, const int &)`|计算多项式和单项式的逆的卷积，|![](http://latex.codecogs.com/gif.latex?O(n)) |
+|`poly operator/=(const poly &, const int &)`|计算多项式和单项式的逆的卷积，|![](http://latex.codecogs.com/gif.latex?O(n)) |
 
-通过以 `inv` 为名的成员函数可以计算多项式的乘法逆。如果没有提供参数，则默认计算模 ![](http://latex.codecogs.com/gif.latex?x^n) 意义下的逆，否则计算模指定幂意义下的逆。
+|方法|简介|时间复杂度|
+|:-:|:-:|:-:|
+|`poly poly::inv(void)const`|计算多项式相同次数的逆。|![](http://latex.codecogs.com/gif.latex?O(n\log%20n)) |
+|`poly poly::inv(std::size_t)const`|计算多项式指定次数的逆。|![](http://latex.codecogs.com/gif.latex?O(n\log%20n)) |
+|`poly poly::prefix(std::size_t)const`|计算多项式前若干项的和。允许参数大于多项式本身的长度。|![](http://latex.codecogs.com/gif.latex?O(n)) |
 
 ## 其他函数
 
-`sqrt`，`log`，`exp` 都已实现。`log` 使用求导后积分的方法求，其余两个都是通过牛顿迭代法求。
+|方法|简介|时间复杂度|
+|:-:|:-:|:-:|
+|`poly sqrt(const poly &)`|计算多项式的平方根。|![](http://latex.codecogs.com/gif.latex?O(n\log%20n))|
+|`poly log(const poly &)`|计算多项式的自然对数。|![](http://latex.codecogs.com/gif.latex?O(n\log%20n))|
+|`poly exp(const poly &)`|计算多项式的指数函数。|![](http://latex.codecogs.com/gif.latex?O(n\log%20n))|
+
+目前尚未实现二次剩余，因此 `sqrt` 函数只有在多项式的常数项为 ![](http://latex.codecogs.com/gif.latex?1) 时才能正常工作。
+
+由于本身的数学性质，`log` 函数的参数的常数项必须为 ![](http://latex.codecogs.com/gif.latex?1) ，`exp` 函数的参数的常数项必须为 ![](http://latex.codecogs.com/gif.latex?0) 。
+
+## 计划
+
+- 在卷积的两个多项式中的其中一个次数较小时，使用 ![](http://latex.codecogs.com/gif.latex?O(nm)) 的方法直接计算。
+- 支持求二次剩余。
+- 新增 `pow` 函数，计算多项式的指定次幂。
+- `inv` 的内部直接调用 DFT 和 IDFT 相关函数，不通过已封装的方法求值，提升效率。
