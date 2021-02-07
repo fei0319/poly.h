@@ -1,6 +1,9 @@
+> This document is out of date. Many informations may not be exact.
+
 # Poly.h Info.
 
 This is the informations related to poly.h. You can read a better rendered version [here]().
+
 
 ## Fixed Modulo Polynomial
 
@@ -11,6 +14,7 @@ The fixed modulo polynomial use specified integers as its modulo, default 998244
 The strict modulo restriction is caused by Number Theoretic Transform (NTT) used to implement the calculation.
 
 To create a fixed modulo polynomial instance, just call for `fstdlib::poly`. You can use the following method to initialize a `fstdlib::poly`:
+
 
 |Name|Intro.|
 |:-:|:-:|
@@ -49,3 +53,4 @@ To create a fixed modulo polynomial instance, just call for `fstdlib::m_poly`. Y
 |`m_poly(std::size_t n = 0, int mod = 1e9 + 7)`|Construct a polynomial of length n, with all elements set to zero. The modulo value of the polynomial is set to mod initially.|
 
 You can always change the modulo value by accessing the member named `mod`. Note that the polynomial's coefficient will not change with the change of `mod`.
+
