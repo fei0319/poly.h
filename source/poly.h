@@ -74,7 +74,7 @@ namespace fstdlib{
 
 		friend poly sqrt(const poly &);
 		friend poly log(const poly &);
-//		friend poly exp(const poly &);
+		friend poly exp(const poly &);
 	};
 	
 	class arbitrary_modulo_poly{
@@ -121,8 +121,8 @@ namespace fstdlib{
 		friend arbitrary_modulo_poly &operator/=(arbitrary_modulo_poly &, const int &);
 
 		friend arbitrary_modulo_poly sqrt(const arbitrary_modulo_poly &);
-//		friend arbitrary_modulo_poly log(const arbitrary_modulo_poly &);
-//		friend arbitrary_modulo_poly exp(const arbitrary_modulo_poly &);
+		friend arbitrary_modulo_poly log(const arbitrary_modulo_poly &);
+		friend arbitrary_modulo_poly exp(const arbitrary_modulo_poly &);
 	};
 	
 	typedef arbitrary_modulo_poly m_poly;
