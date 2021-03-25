@@ -1,8 +1,8 @@
 /*
  * This file is part of the fstdlib project.
  * Version: Build v0.0.3
- * This is not a stable version. You can check for details and get the latest version at https://github.com/FKazami/fstdlib
- * If you have discovered any bugs, please report about it at https://github.com/FKazami/fstdlib/issues/new
+ * This is not a stable version. You can check for details and get the latest version at https://github.com/fei0319/fstdlib
+ * If you have discovered any bugs, please report about it at https://github.com/fei0319/fstdlib/issues/new
  */
 
 #ifndef _FEISTDLIB_POLY_
