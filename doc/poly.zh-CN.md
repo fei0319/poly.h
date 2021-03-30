@@ -8,7 +8,7 @@ poly.h 中定义了两个类，名为 `poly` 和 `m_poly`。它们都在命名�
 
 其中，`poly` 是固定模数的多项式类，它的模数定义为 `fstdlib::mod`，默认值为 ![](http://latex.codecogs.com/gif.latex?998244353)。正常情况下，这个模数是一个常量。如果您需要修改它，您应当定义宏 `VARIABLE_MODULO`。您必须保证修改后：
 
-- 模数是一个能够用于 NTT 的模数。换句话讲，它必须能表示为 ![](http://latex.codecogs.com/gif.latex?k\cdot%202^r+1) 的形式。
+- 模数是一个能够用于 NTT 的模数。换句话讲，它必须能表示为 ![](http://latex.codecogs.com/gif.latex?k\cdot%202^r+1) 的形式，且 ![](http://latex.codecogs.com/gif.latex?2^r) 足够大。
 - 模数的两倍应当小于 32 位有符号整数的表示范围。
 
 如果 ![](http://latex.codecogs.com/gif.latex?3) 不是您设定的模数的一个原根，您还应该将 `fstdlib::grt` 的值改为您设定模数的一个原根。
