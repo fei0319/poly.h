@@ -4,7 +4,7 @@ English | [中文](https://github.com/fei0319/poly.h/blob/master/README.zh.md)
 
 POLY.H is a library that supports diverse polynomial calculation including linear computation, multiplication, inversion, square root, logarithm and exponent. Also, it supports polynomial with arbitrary modulus.
 
-# Usage
+## Usage
 
 POLY.H is implemented in C++. You only need to download the header file [poly.h](https://github.com/fei0319/poly.h/blob/master/source/poly.h).
 
