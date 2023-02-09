@@ -1,4 +1,4 @@
-English | [中文]((https://github.com/fei0319/poly.h/blob/master/README.zh.md))
+English | [中文](https://github.com/fei0319/poly.h/blob/master/README.zh.md)
 
 # poly.h
 
