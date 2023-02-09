@@ -1,31 +1,83 @@
-[English](https://github.com/fei0319/fstdlib/blob/master/README.en.md) | 简体中文
+English | [中文]((https://github.com/fei0319/poly.h/blob/master/README.zh.md))
 
-# fstdlib
-为 OI 设计的 C++ 模板库。目前（也许永远）只支持多项式运算。
+# poly.h
 
-![](https://img.shields.io/badge/license-GPL-blue?style=flat-square) ![](https://img.shields.io/badge/C++-100.0%25-green?style=flat-square) ![](https://img.shields.io/badge/requirements-C++98%20or%20newer-brightgreen?style=flat-square)
+POLY.H is a library that supports diverse polynomial calculation including linear computation, multiplication, inversion, square root, logarithm and exponent. Also, it supports polynomial with arbitrary modulus.
 
-## 特性
+# Usage
 
-- 📈 **多项式类**: 支持包括卷积、开方、指对函数在内的大量多项式运算。
-- 📉 **任意模数多项式类**: 支持包括卷积、开方、指对函数在内的大量多项式运算。
+POLY.H is implemented in C++. You only need to download the header file [poly.h](https://github.com/fei0319/poly.h/blob/master/source/poly.h).
 
-fstdlib 经过完善的封装，确保您可以轻松地使用，将注意力集中到题目本身。不仅如此，fstdlib 还拥有优秀的运行效率，确保您不会错失应得的分数。
+There are two classes in POLY.H: `poly` and `m_poly`, both inside namespace `fstdlib`. You can call them by `fstdlib::poly` and `fstdlib::m_poly`, or simply use `using namespace fstdlib`.
 
-## 内容
+---
 
-|项目|简介|代码|文档|版本|
-|:-:|:-:|:-:|:-:|:-:|
-|多项式|包含多项式类和任意模数多项式类|[poly.h](https://raw.githubusercontent.com/fei0319/fstdlib/master/source/poly.h)|[poly](https://github.com/fei0319/fstdlib/blob/master/doc/poly.zh-CN.md)|v0.0.3 Build|
+`poly` is a polynomial class with fixed modulus `fstdlib::mod`, whose value is $998,244,353$ by default. This varible is constant. If you are to modify it, you have to define macro `VARIABLE_MODULO` in advance and ensure that:
 
-我们强烈推荐您使用最新版本的 fstdlib。
+- The new modulus can be used for NTT. In other words, it has to be a prime and can be represented by $k \cdot 2^r + 1$ where $k$ and $r$ are integers and $2^r$ is big enough.
+- Twice this modulus is within the range of 32b signed integer.
 
-## 贡献
+Besides, if $3$ is not a primitive root of your modulus, you have set `fstdlib::grt` to a primitive root of your modulus.
 
-fstdlib 已停止维护，以下信息作废。
+---
 
-我们非常欢迎您为 fstdlib 做出贡献！您可以以如下的方式贡献：
+`m_poly` is a polynomial class with arbitrary modulus `mod`, which is a 32b signed integer member of each single instance. You should ensure:
 
-- 在您的代码中使用 fstdlib。
-- 提交 issues 来报告 bugs 或询问问题。
-- 提交 PR 来帮助我们优化 fstdlib。
+- Twice your modulus is within the range of 32b signed integer.
+- Any instances that are calculated together have the same modulus.
+- If the modulus is not a prime, no calculation except for linear computation and multiplication is applied.
+
+## Constructors
+
+|Method|Intro|
+|:-:|:-:|
+|`poly(std::size_t n)`|Create a polynomial of length $n$. All elements are initialized with $0$.|
+|`poly(std::vector<int> a)`|Create a polynomial by a vector.|
+|`m_poly(std::size_t n, int p)`|Create a polynomial of arbitrary modulus $p$ and length $n$. All elements are initialized with $0$.|
+|`m_poly(std::vector<int> a, int p)`|Create a polynomial of arbitrary modulus $p$ by a vector.|
+
+## Overloaded Operators
+
+|Method|Intro|Time Complexity|
+|:-:|:-:|:-:|
+|`poly operator*(const poly &, const poly &)`      |Convolution of two polynomials.                         | $O(n\log n)$ |
+|`poly &operator*=(poly &, const poly &)`          |Convolution of two polynomials.                         | $O(n\log n)$ |
+|`poly operator*(const poly &, const int &`        |Convolution of a polynomial and a monomial.             | $O(n)$       |
+|`poly &operator*=(poly &, const int &)`           |Convolution of a polynomial and a monomial.             | $O(n)$       |
+|`poly operator*(const int &, const poly &)`       |Convolution of a polynomial and a monomial.             | $O(n)$       |
+|`poly operator>>(const poly &, const int &)`      |Right shift of a polynomial.                            | $O(n)$       |
+|`poly &operator>>=(poly &, const int &)`          |Right shift of a polynomial.                            | $O(n)$       |
+|`poly operator<<(const poly &, const int &)`      |Left shift of a polynomial.                             | $O(n)$       |
+|`poly &operator<<=(poly &, const int &)`          |Left shift of a polynomial.                             | $O(n)$       |
+|`poly operator+(const poly &, const poly &)`      |Sum of two polynomials.                                 | $O(n)$       |
+|`poly &operator+=(poly &, const poly &)`          |Sum of two polynomials.                                 | $O(n)$       |
+|`poly operator+(const poly &, const int &`        |Sum of a polynomial and a monomial.                     | $O(n)$       |
+|`poly &operator+=(poly &, const int &)`           |Sum of a polynomial and a monomial.                     | $O(1)$       |
+|`poly operator+(const int &, const poly &)`       |Sum of a monomial and a polynomial.                     | $O(n)$       |
+|`poly operator-(const poly &, const poly &)`      |Substraction of two polynomials.                        | $O(n)$       |
+|`poly &operator-=(poly &, const poly &)`          |Substraction of two polynomials.                        | $O(n)$       |
+|`poly operator-(const poly &, const int &`        |Substraction of a polynomial and a monomial.            | $O(n)$       |
+|`poly &operator-=(poly &, const int &)`           |Substraction of a polynomial and a monomial.            | $O(1)$       |
+|`poly operator-(const int &, const poly &)`       |Substraction of a monomial and a polynomial.            | $O(n)$       |
+|`poly operator/(const poly &, const int &)`       |Division of a polynomial and a monomial.                | $O(n)$       |
+|`poly operator/=(const poly &, const int &)`      |Division of a polynomial and a monomial.                | $O(n)$       |
+
+## Member Functions
+
+|Method|Intro|Time Complexity|
+|:-:|:-:|:-:|
+|`poly poly::inv(void)const`              |Inversoin of a polynomial.                                                         | $O(n\log n)$ |
+|`poly poly::inv(std::size_t)const`       |Inversion of a polynomial of a specified length.                                   | $O(n\log n)$ |
+|`poly poly::prefix(std::size_t)const`    |Prefix of a polynomial. The parameter can be greater than the polynomial's length. | $O(n)$       |
+
+## Other Functions
+
+|Method|Intro|Time Complexity|
+|:-:|:-:|:-:|
+|`poly sqrt(const poly &)`|Square root of a polynomial.| $O(n\log n)$ |
+|`poly log(const poly &)` |Exponent of a polynomial.   | $O(n\log n)$ |
+|`poly exp(const poly &)` |Logarithm of a polynomial.  | $O(n\log n)$ |
+
+- The constant term of the polynomial `sqrt` applied to must be $1$.
+- The constant term of the polynomial `log` applied to must be $1$.
+- The constant term of the polynomial `exp` applied to must be $0$.
